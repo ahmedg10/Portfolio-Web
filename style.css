@@ -1,0 +1,205 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+/* splash screen */
+
+.intro{
+   position: fixed;
+   z-index: 15;
+   left: 0;
+   top: 0; 
+   width: 100%;
+   height: 100vh; 
+   background-color: grey;
+   transition: 1s;
+   font-family: "Poppins", sans-serif;
+}
+
+.logo-header{
+   position:absolute;
+   top: 40%; 
+   left: 50%; 
+   font-size: 55px;
+   transform: translate(-50%, -50%);
+   color: white
+}
+
+.logo{
+   position: relative;
+   display: inline-block;
+   bottom: -20px;
+    /*making the logo transparent  */
+   opacity: 0; 
+}
+
+/* what is the active call in CSS? */
+.logo.active{
+   bottom: 0;
+   opacity: 1;
+   transition: ease-in-out .5s;
+}
+
+.logo.fade{
+   bottom: 150px;
+   opacity: 0;
+   transition: ease-in-out .5s;
+}
+
+
+/* Landing Page */
+.landing{
+  font-weight: 300;
+  background-color: #151515;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  
+  
+}
+.landing h1{
+   font-size: 10vw;
+   letter-spacing: -0.5vw;
+   width: 100%;
+   height: 100%;
+   margin-right: 1rem;
+}
+
+.hero__header{
+  transform: translateY(100%);
+  transition: 1s;
+}
+
+.hero__span{
+  display: inline-block;
+  overflow: hidden;
+}
+
+canvas{
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.panel__container{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   z-index: 3;
+   display: flex;
+}
+
+.panel{
+   position: relative;
+   flex: 1;
+   height: 100%;
+   overflow: hidden;
+}
+
+.text__wrap{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   display: flex;
+   transform-origin: center;
+   transform: translate(-50%, -50%) rotate(-90deg);
+   opacity: 0;
+   transition: opacity 1s;
+}
+
+.text__wrap.active{
+   opacity: 1;
+}
+
+.panel h1{
+   font-size: 15vw;
+   margin-right: 1rem;
+}
+
+.hero-text{
+   position: absolute;
+    bottom: 19%;
+    display: grid;
+    z-index: 10;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    color: rgba(240, 248, 255, 0.826);
+}
+
+.hero-text div:nth-child(1){
+   grid-area: 1 / 1 / 1 / 13;
+}
+
+.hero-text div:nth-child(2){
+   grid-area: 2 / 3 / 3 / 13;
+}
+
+.hero-text div:nth-child(3){
+   grid-area: 3 / 3 / 4 / 13;
+   text-align: right;
+}
+
+.forward{
+   animation: lift 100s linear infinite;
+}
+
+.reverse{
+   animation: lift-reverse 100s linear infinite;
+}
+
+@keyframes lift {
+   0%{
+       transform: translate(-50%, -50%) rotate(-90deg);
+   }
+
+   50%{
+       transform: translate(-50%, -1000%) rotate(-90deg);
+   }
+
+   100%{
+       transform: translate(-50%, -50%) rotate(-90deg);
+   }
+}
+
+@keyframes lift-reverse {
+   0%{
+       transform: translate(-50%, -1000%) rotate(-90deg);
+   }
+
+   50%{
+       transform: translate(-50%, -50%) rotate(-90deg);
+   }
+
+   100%{
+       transform: translate(-50%, -1000%) rotate(-90deg);
+   }
+}
+
+
+/* Header Transitions */
+
+/* .About h1, .Contact h1, .Projects h1{ 
+   font-family: 'Inter', sans-serif;
+   font-weight: 400;
+   letter-spacing: -.1em;
+   position: absolute;
+   bottom: 1rem; 
+   font-size: clamp(1px, 13vw, 100px);
+   /* opacity: 0; */
+
+
+
+/* .About section, .Contact section, .Projects section{
+   position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90vh;
+    width: 95%;   
+} */
