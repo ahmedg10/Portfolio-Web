@@ -31,12 +31,10 @@ interface MouseCoords {
 
 setTimeout(() => {
     panelHeadersArray.forEach((header, idx) => {
-        console.log("before" + header.parentElement)
         for(let i = 0; i < 10; i++){
             let clone = header.cloneNode(true);
             header.parentElement?.appendChild(clone);
         }
-        console.log("after" + header.parentElement)
         setTimeout(() => {
             header.parentElement?.classList.add('active')
         }, 1000 + (idx * 200))

@@ -17,12 +17,10 @@ heroHeadersArray.forEach((header, inx) => {
 setTimeout(() => {
     panelHeadersArray.forEach((header, idx) => {
         var _a;
-        console.log("before" + header.parentElement);
         for (let i = 0; i < 10; i++) {
             let clone = header.cloneNode(true);
             (_a = header.parentElement) === null || _a === void 0 ? void 0 : _a.appendChild(clone);
         }
-        console.log("after" + header.parentElement);
         setTimeout(() => {
             var _a;
             (_a = header.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add('active');

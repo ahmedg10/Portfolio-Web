@@ -185,21 +185,35 @@ canvas{
 
 /* Header Transitions */
 
-/* .About h1, .Contact h1, .Projects h1{ 
+.About, .Contact, .Projects{
+   background-color: #151515;
+}
+
+.About h1, .Contact h1, .Projects h1{ 
    font-family: 'Inter', sans-serif;
    font-weight: 400;
    letter-spacing: -.1em;
    position: absolute;
-   bottom: 1rem; 
-   font-size: clamp(1px, 13vw, 100px);
-   /* opacity: 0; */
+   top: 10%; 
+   font-size: clamp(1px, 10vw, 100px);
+   color:aliceblue;
+   opacity: 0;
+}
 
 
-
-/* .About section, .Contact section, .Projects section{
-   position: relative;
+.About section, .Contact section, .Projects section{
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
-    height: 90vh;
+    height: 100vh;
     width: 95%;   
-} */
+} 
+
+.header__span{ 
+   /* lets you animate header */
+   display: inline-block; 
+   transform: translateX(-10px);
+   opacity: 0;
+   transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+}
+
